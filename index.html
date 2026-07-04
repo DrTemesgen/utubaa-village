@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utubaa Village — Home of the Ethiopia Thanks You Award</title>
+<meta name="description" content="Utubaa Village is a digital village of pillars — one for every verified, unnoticed life that held others up. Home of the Ethiopia Thanks You Award.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --green: #078930;
+    --yellow: #FCDD09;
+    --red: #DA121A;
+    --ink: #1A1A1A;
+    --muted: #555555;
+    --paper: #FFFFFF;
+    --soft: #F7F7F5;
+    --line: #E6E6E2;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, "Noto Sans", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .serif { font-family: Cambria, Georgia, "Times New Roman", serif; }
+
+  /* everything centered unless it is a list */
+  section, header, footer { text-align: center; }
+  .box { max-width: 780px; margin-inline: auto; padding-inline: 20px; }
+  ul, ol { text-align: left; max-width: 640px; margin-inline: auto; }
+  li { margin-bottom: 10px; }
+
+  .tricolor { display: flex; height: 6px; }
+  .tricolor span { flex: 1; }
+  .tricolor .g { background: var(--green); }
+  .tricolor .y { background: var(--yellow); }
+  .tricolor .r { background: var(--red); }
+
+  header.site {
+    padding: 22px 20px 0;
+  }
+  .wordmark {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: Cambria, Georgia, serif; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em;
+  }
+  .wordmark svg { display: block; }
+
+  .hero { padding: 64px 20px 72px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 18px;
+  }
+  h1 {
+    font-family: Cambria, Georgia, serif;
+    font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+    line-height: 1.12; margin: 0 auto 22px; max-width: 17ch; text-wrap: balance;
+  }
+  .hero .lede { font-size: 1.18rem; max-width: 58ch; margin: 0 auto 30px; color: var(--muted); }
+  .hero .medemer-line { font-family: Cambria, Georgia, serif; font-style: italic; font-size: 1.05rem; margin: 0 auto 36px; max-width: 52ch; }
+  .hero .medemer-line b { color: var(--green); font-style: normal; }
+
+  .pillars-mark { display: flex; justify-content: center; gap: 14px; align-items: flex-end; margin: 0 auto 34px; }
+  .pillars-mark span { display: block; width: 22px; border-radius: 3px 3px 0 0; }
+  .pillars-mark .p1 { height: 44px; background: var(--green); }
+  .pillars-mark .p2 { height: 66px; background: var(--yellow); }
+  .pillars-mark .p3 { height: 88px; background: var(--red); }
+  .pillars-mark .p4 { height: 66px; background: var(--yellow); }
+  .pillars-mark .p5 { height: 44px; background: var(--green); }
+
+  .cta {
+    display: inline-block; background: var(--green); color: #FFFFFF;
+    font-weight: 600; text-decoration: none; padding: 13px 34px; border-radius: 4px;
+    border: 2px solid var(--green);
+  }
+  .cta:hover, .cta:focus-visible { background: #056A25; border-color: #056A25; }
+  .cta.ghost { background: transparent; color: var(--green); margin-left: 10px; }
+  .cta.ghost:hover, .cta.ghost:focus-visible { background: var(--soft); }
+  a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+  section.band { padding: 68px 20px; }
+  section.band.soft { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 {
+    font-family: Cambria, Georgia, serif;
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+    margin: 0 auto 14px; max-width: 26ch; text-wrap: balance;
+  }
+  .kicker { color: var(--red); }
+  section p { max-width: 62ch; margin-left: auto; margin-right: auto; }
+  .sub { color: var(--muted); }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; max-width: 980px; margin: 34px auto 0; padding-inline: 20px; }
+  .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 6px;
+    padding: 26px 22px; text-align: center;
+  }
+  .card .flag { width: 44px; height: 5px; margin: 0 auto 16px; display: flex; }
+  .card .flag span { flex: 1; }
+  .card h3 { font-family: Cambria, Georgia, serif; margin: 0 0 8px; font-size: 1.12rem; }
+  .card p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; max-width: 900px; margin: 34px auto 0; padding-inline: 20px; }
+  .stat { background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--green); border-radius: 6px; padding: 22px 16px; text-align: center; }
+  .stat:nth-child(2) { border-top-color: var(--yellow); }
+  .stat:nth-child(3) { border-top-color: var(--red); }
+  .stat:nth-child(4) { border-top-color: var(--green); }
+  .stat .num { font-family: Cambria, Georgia, serif; font-size: 2.3rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat .lbl { font-size: 0.85rem; color: var(--muted); }
+
+  ol.rules { counter-reset: rule; list-style: none; padding: 0; max-width: 680px; }
+  ol.rules li {
+    counter-increment: rule; background: var(--paper); border: 1px solid var(--line);
+    border-radius: 6px; padding: 18px 20px 18px 64px; position: relative; margin-bottom: 12px;
+  }
+  ol.rules li::before {
+    content: counter(rule);
+    position: absolute; left: 18px; top: 18px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--green); color: #FFFFFF; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; font-size: 0.95rem;
+  }
+  ol.rules li:nth-child(2)::before { background: var(--yellow); color: var(--ink); }
+  ol.rules li:nth-child(3)::before { background: var(--red); }
+  ol.rules li:nth-child(4)::before { background: var(--green); }
+  ol.rules li:nth-child(5)::before { background: var(--yellow); color: var(--ink); }
+  ol.rules b { font-family: Cambria, Georgia, serif; }
+  ol.rules span { color: var(--muted); font-size: 0.95rem; }
+
+  ol.steps { max-width: 640px; padding-left: 24px; }
+  ol.steps li b { font-family: Cambria, Georgia, serif; }
+  ol.steps li span { color: var(--muted); font-size: 0.95rem; }
+
+  .journey { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; max-width: 980px; margin: 34px auto 0; padding-inline: 20px; }
+  .tier { border-radius: 6px; padding: 28px 22px; text-align: center; color: #FFFFFF; }
+  .tier.t1 { background: var(--green); }
+  .tier.t2 { background: var(--red); }
+  .tier.t3 { background: var(--ink); }
+  .tier .when { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; }
+  .tier h3 { font-family: Cambria, Georgia, serif; margin: 6px 0 8px; font-size: 1.3rem; }
+  .tier p { margin: 0; font-size: 0.92rem; opacity: 0.92; }
+  .tier .flag-dot { width: 40px; height: 4px; background: var(--yellow); margin: 0 auto 14px; }
+
+  .notice {
+    max-width: 680px; margin: 40px auto 0; background: var(--soft);
+    border: 1px solid var(--line); border-left: 5px solid var(--yellow);
+    border-radius: 6px; padding: 20px 24px; text-align: center; font-size: 0.95rem; color: var(--muted);
+  }
+
+  footer.site { padding: 44px 20px 28px; color: var(--muted); font-size: 0.85rem; }
+  footer.site p { max-width: 70ch; margin: 6px auto; }
+</style>
+</head>
+<body>
+
+<div class="tricolor" aria-hidden="true"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+
+<header class="site">
+  <div class="wordmark">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="2"  y="12" width="5" height="12" rx="1" fill="#078930"/>
+      <rect x="10.5" y="4" width="5" height="20" rx="1" fill="#FCDD09"/>
+      <rect x="19" y="12" width="5" height="12" rx="1" fill="#DA121A"/>
+    </svg>
+    UTUBAA VILLAGE
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="box">
+      <span class="eyebrow">Home of the Ethiopia Thanks You Award</span>
+      <h1>A village where every pillar is a life that held others up</h1>
+      <div class="pillars-mark" aria-hidden="true"><span class="p1"></span><span class="p2"></span><span class="p3"></span><span class="p4"></span><span class="p5"></span></div>
+      <p class="lede"><i>Utubaa</i> is the pillar at the heart of the home. Utubaa Village is a digital village of such pillars — one raised for every verified, unnoticed Ethiopian whose life's work carried others: the teacher, the nurse, the farmer, the elder, the builder no one filmed.</p>
+      <p class="medemer-line">Built in the spirit of <b>medemer</b> — nothing is complete alone; each person adds what they have to the whole.</p>
+      <a class="cta" href="#how">How a pillar is earned</a><a class="cta ghost" href="#journey">The journey</a>
+    </div>
+  </section>
+
+  <section class="band soft">
+    <div class="box">
+      <h2>Not fame. Not money. Not politics. <span class="kicker">Evidence.</span></h2>
+      <p class="sub">No one enters the Village by being famous, by paying, or by winning a poll. A person is nominated only by people who lived alongside their work — a student, a patient, a neighbor, a colleague — and every claim must come with evidence. Nothing unverified is ever written into the record.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">10 yrs</div><div class="lbl">of verified contribution required</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">close witnesses, each with years beside the work</div></div>
+      <div class="stat"><div class="num">2×2</div><div class="lbl">two independent sources from two evidence classes, per claim</div></div>
+      <div class="stat"><div class="num">0</div><div class="lbl">sponsors — no sponsor will ever fund or influence the award</div></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="box">
+      <h2>Five rules, written before the first pillar rises</h2>
+      <p class="sub">The founding charter locks these in — so the bar can never move to fill a ceremony.</p>
+    </div>
+    <ol class="rules">
+      <li><b>Money never touches merit.</b><br><span>The body that holds funds is constitutionally barred from choosing laureates.</span></li>
+      <li><b>The award may be withheld.</b><br><span>If no dossier meets the bar, no award is given that year — with the reasons published.</span></li>
+      <li><b>AI screens, humans judge.</b><br><span>Intelligent systems organize and cross-check evidence; every consequential judgment is made and signed by a named human being.</span></li>
+      <li><b>The process itself is public.</b><br><span>Criteria, scoring, acceptance rates, and audits are published. Only people's private files are sealed.</span></li>
+      <li><b>The same rules at every tier.</b><br><span>Village, nation, continent, world — one standard.</span></li>
+    </ol>
+  </section>
+
+  <section class="band soft" id="how">
+    <div class="box">
+      <h2>How a pillar is earned</h2>
+      <p class="sub">Seven stages stand between a nomination and a pillar in the Village.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Nomination</b> — <span>by three close witnesses, in any Ethiopian language, written or spoken.</span></li>
+      <li><b>Screening</b> — <span>AI checks completeness and independence; a named officer signs every decision.</span></li>
+      <li><b>Consent</b> — <span>nothing proceeds without the nominee's written agreement.</span></li>
+      <li><b>Cross-verification</b> — <span>every claim is broken down and tested against independent evidence.</span></li>
+      <li><b>Field verification</b> — <span>trained verifiers travel to the place of the work and speak with the people it touched.</span></li>
+      <li><b>Adjudication</b> — <span>an independent council decides in an AI-free room, and may award no one.</span></li>
+      <li><b>The pillar rises</b> — <span>the verified story is published, and a virtual pillar joins the Village — in time, in full 360°.</span></li>
+    </ol>
+  </section>
+
+  <section class="band" id="journey">
+    <div class="box">
+      <h2>From one village to the whole world</h2>
+      <p class="sub">The Village grows in three tiers, carrying the same standard outward.</p>
+    </div>
+    <div class="journey">
+      <div class="tier t1"><div class="flag-dot"></div><div class="when">First pillars · 2028</div><h3>Ethiopia Thanks You</h3><p>The national award — proving that true, evidence-verified gratitude is possible.</p></div>
+      <div class="tier t2"><div class="flag-dot"></div><div class="when">Proposed to the African Union</div><h3>Africa Thanks You</h3><p>The continental award, carried to the AU on the strength of the Ethiopian pilot.</p></div>
+      <div class="tier t3"><div class="flag-dot"></div><div class="when">The horizon</div><h3>Humanity Thanks You</h3><p>A global tier — because unnoticed goodness has no borders.</p></div>
+    </div>
+    <div class="notice">
+      <b>The Village is being founded now.</b> Nominations are not yet open. The founding charter, criteria, and verification framework are complete and under review; the first pillars are planned to rise in 2028, announced on Ethiopian New Year.
+    </div>
+  </section>
+
+  <section class="band soft">
+    <div class="box">
+      <h2>Why this must exist</h2>
+      <p class="sub">In the only published integrity study of an established national awards industry, 61% of award schemes required no supporting evidence and 43% had a single judging stage. Children grow up knowing the names of the famous, not the names of the good. Utubaa Village exists so that a nation's gratitude finally lands where it is owed — and so the next generation can walk among pillars and choose whom to become.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="flag"><span style="background:var(--green)"></span><span style="background:var(--yellow)"></span><span style="background:var(--red)"></span></div><h3>A directory of hope</h3><p>Every pillar is searchable by field — show a child the teachers, the healers, the growers.</p></div>
+      <div class="card"><div class="flag"><span style="background:var(--green)"></span><span style="background:var(--yellow)"></span><span style="background:var(--red)"></span></div><h3>The whole truth</h3><p>Each record holds what was achieved and what failed, the lessons, and what they came to believe — in their own voice, never edited.</p></div>
+      <div class="card"><div class="flag"><span style="background:var(--green)"></span><span style="background:var(--yellow)"></span><span style="background:var(--red)"></span></div><h3>Wisdom that stays</h3><p>With consent, laureates' knowledge is preserved so anyone can learn from how they worked — long after they rest.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="tricolor" aria-hidden="true" style="max-width:120px;margin:0 auto 20px;"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+  <p><b>Utubaa Village</b> · Home of the Ethiopia Thanks You Award</p>
+  <p>A founding-stage civil initiative. Individuals only · evidence only · no sponsors, ever.</p>
+  <p>Amharic and Afaan Oromo editions of this page are in preparation.</p>
+  <p>© 2026 Utubaa Village founding project. All content is draft and subject to the founding charter.</p>
+</footer>
+
+</body>
+</html>

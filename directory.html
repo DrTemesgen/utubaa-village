@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Directory — Utubaa Village</title>
+<meta name="description" content="The Gratitude Directory: a village of pillars, searchable by field. Each pillar a verified, unnoticed life that held others up.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="tricolor" aria-hidden="true"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="2" y="12" width="5" height="12" rx="1" fill="#078930"/><rect x="10.5" y="4" width="5" height="20" rx="1" fill="#FCDD09"/><rect x="19" y="12" width="5" height="12" rx="1" fill="#DA121A"/>
+    </svg>
+    UTUBAA VILLAGE
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html" class="active">The Directory</a>
+    <a href="nominate.html">Nominate</a>
+    <a href="about.html">The Criteria</a>
+  </div>
+</nav>
+
+<main>
+  <section class="band tight">
+    <div class="box">
+      <span class="eyebrow">The Gratitude Directory</span>
+      <h1>Walk among the pillars</h1>
+      <p>Every pillar is a verified life, searchable by field — so a child can be shown the teachers, the healers, the growers, and choose whom to become. Laureates are drawn from every region and every faith; the record honours the person, never the group.</p>
+      <div class="notice"><b>Illustrative preview.</b> The pillars below are composites created to show how the Directory will look. No real person is depicted. Nominations open in 2028; the first real pillars rise then.</div>
+    </div>
+  </section>
+
+  <section class="band tight" style="padding-top:10px;">
+    <input class="search" id="search" type="search" placeholder="Search by name, field, or region…" aria-label="Search the directory">
+    <div class="filters" id="filters"></div>
+    <div class="pillar-grid" id="grid"></div>
+    <p id="empty" class="sub" style="display:none;margin-top:30px;">No pillars match that search yet.</p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="tricolor" aria-hidden="true" style="max-width:120px;margin:0 auto 20px;"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+  <p><b>Utubaa Village</b> · The Gratitude Directory</p>
+  <p><a href="index.html">Home</a> · <a href="nominate.html">Nominate</a> · <a href="about.html">The Criteria</a></p>
+</footer>
+
+<script src="laureates.js"></script>
+<script>
+  var grid = document.getElementById('grid');
+  var filtersEl = document.getElementById('filters');
+  var searchEl = document.getElementById('search');
+  var emptyEl = document.getElementById('empty');
+  var activeField = 'ALL';
+
+  function initials(name){ return name.replace(/\(illustrative\)/i,'').trim().split(/\s+/).slice(0,2).map(function(w){return w[0];}).join('').toUpperCase(); }
+
+  function usedFields(){
+    var s = {}; LAUREATES.forEach(function(l){ s[l.field]=true; }); return Object.keys(s);
+  }
+
+  function renderFilters(){
+    var btns = '<button class="filter-btn active" data-f="ALL">All fields</button>';
+    usedFields().forEach(function(code){
+      btns += '<button class="filter-btn" data-f="'+code+'"><span class="fieldcode">'+code+'</span> · '+FIELDS[code]+'</button>';
+    });
+    filtersEl.innerHTML = btns;
+    Array.prototype.forEach.call(filtersEl.querySelectorAll('.filter-btn'), function(b){
+      b.addEventListener('click', function(){
+        activeField = b.getAttribute('data-f');
+        Array.prototype.forEach.call(filtersEl.querySelectorAll('.filter-btn'), function(x){ x.classList.remove('active'); });
+        b.classList.add('active');
+        render();
+      });
+    });
+  }
+
+  function render(){
+    var q = (searchEl.value||'').toLowerCase();
+    var rows = LAUREATES.filter(function(l){
+      if (activeField !== 'ALL' && l.field !== activeField) return false;
+      if (!q) return true;
+      return (l.name+' '+l.role+' '+l.region+' '+FIELDS[l.field]+' '+l.cite).toLowerCase().indexOf(q) !== -1;
+    });
+    grid.innerHTML = rows.map(function(l){
+      return '<a class="pillar-card" href="profile.html?id='+encodeURIComponent(l.id)+'">'
+        + '<div class="monogram" style="background:'+l.color+';">'+initials(l.name)+'</div>'
+        + '<h3>'+l.name+'</h3>'
+        + '<p class="role">'+l.role+'</p>'
+        + '<p class="cite">'+l.cite+'</p>'
+        + '<div class="foot"><span class="chip field"><span class="fieldcode">'+l.field+'-'+l.mode+'</span></span>'
+        + '<span class="chip verified">Verified</span></div>'
+        + '</a>';
+    }).join('');
+    emptyEl.style.display = rows.length ? 'none' : 'block';
+  }
+
+  renderFilters();
+  render();
+  searchEl.addEventListener('input', render);
+</script>
+</body>
+</html>

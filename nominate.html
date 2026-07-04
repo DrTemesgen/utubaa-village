@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nominate — Utubaa Village</title>
+<meta name="description" content="Nominate an unnoticed life for the Ethiopia Thanks You Award. Evidence-based, close-witness nomination. A faithful preview of the intake.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="tricolor" aria-hidden="true"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="2" y="12" width="5" height="12" rx="1" fill="#078930"/><rect x="10.5" y="4" width="5" height="20" rx="1" fill="#FCDD09"/><rect x="19" y="12" width="5" height="12" rx="1" fill="#DA121A"/>
+    </svg>
+    UTUBAA VILLAGE
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html">The Directory</a>
+    <a href="nominate.html" class="active">Nominate</a>
+    <a href="about.html">The Criteria</a>
+  </div>
+</nav>
+
+<main>
+  <section class="band tight">
+    <div class="box">
+      <span class="eyebrow">Registration &amp; Nomination</span>
+      <h1>Name someone the nation should thank</h1>
+      <p>You cannot nominate yourself, and you cannot nominate the famous for being famous. You nominate a person whose work you have seen with your own eyes, over years — and you bring the evidence. This is how an unnoticed life becomes a pillar.</p>
+      <div class="notice"><b>Faithful preview — nominations formally open in 2028.</b> This intake works exactly as the real one will, but it stores and sends nothing. Do not enter another person's private details yet. Its purpose is to show the criteria and the shape of a nomination.</div>
+    </div>
+  </section>
+
+  <section class="band soft tight">
+    <div class="box"><h2>Who may be honoured, and who may nominate</h2></div>
+    <div class="crit-grid">
+      <div class="crit"><h3>An individual, living</h3><p>One person, never an organization. Living, so their story and consent can be recorded.</p></div>
+      <div class="crit"><h3>Ten years of work</h3><p>A sustained, verifiable contribution already made — not a promise, not potential.</p></div>
+      <div class="crit"><h3>You knew the work</h3><p>You are a student, patient, colleague, neighbour, teacher, or the one they served — with at least two years and a hundred hours beside the work.</p></div>
+      <div class="crit"><h3>Three witnesses</h3><p>At least three people who knew the work, from two kinds of relationship, at least one who was directly helped.</p></div>
+      <div class="crit"><h3>Evidence, per claim</h3><p>Each claim needs two independent sources from two classes: records, independent testimony, or what a verifier can see on the ground.</p></div>
+      <div class="crit"><h3>No payment, no campaign</h3><p>No one is ever paid to nominate, and public campaigning for a nominee disqualifies them. This is not a popularity contest.</p></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="box"><h2>Begin a nomination</h2><p class="sub">Fields marked <span style="color:var(--red)">*</span> are required. Take your time; a strong nomination is specific.</p></div>
+
+    <form class="form-wrap" id="nomForm" novalidate>
+
+      <div class="form-step">
+        <span class="step-num">1</span>
+        <h3>Confirm you may nominate</h3>
+        <p class="hint">Every box must be true. These are the rules that keep the Village honest.</p>
+        <label class="check"><input type="checkbox" required> The person is a living individual, not an organization.</label>
+        <label class="check"><input type="checkbox" required> Their contribution spans at least ten years and has already happened.</label>
+        <label class="check"><input type="checkbox" required> I personally knew the work — at least two years and a hundred hours beside it.</label>
+        <label class="check"><input type="checkbox" required> I am not a close relative, and no one is paying me to do this.</label>
+        <label class="check"><input type="checkbox" required> I understand a public campaign for this person would disqualify them.</label>
+      </div>
+
+      <div class="form-step">
+        <span class="step-num">2</span>
+        <h3>The person you are honouring</h3>
+        <div class="grid-2">
+          <label class="field">Their name <span class="req">*</span><input type="text" name="nomineeName" required></label>
+          <label class="field">Region of their work <span class="req">*</span>
+            <select name="region" required>
+              <option value="">Choose…</option>
+              <option>Addis Ababa</option><option>Afar</option><option>Amhara</option><option>Benishangul-Gumuz</option>
+              <option>Central Ethiopia</option><option>Dire Dawa</option><option>Gambela</option><option>Harari</option>
+              <option>Oromia</option><option>Sidama</option><option>Somali</option><option>South Ethiopia</option>
+              <option>South West Ethiopia</option><option>Tigray</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid-2">
+          <label class="field">Field of contribution <span class="req">*</span>
+            <select name="field" id="fieldSelect" required><option value="">Choose…</option></select>
+          </label>
+          <label class="field">Years of contribution <span class="req">*</span><input type="number" name="years" min="1" placeholder="e.g. 22" required></label>
+        </div>
+        <label class="field">In one sentence, why should the nation thank them? <span class="req">*</span>
+          <textarea name="citation" placeholder="For forty years teaching the children of one village to read…" required></textarea>
+        </label>
+      </div>
+
+      <div class="form-step">
+        <span class="step-num">3</span>
+        <h3>You, the witness</h3>
+        <div class="grid-2">
+          <label class="field">Your name <span class="req">*</span><input type="text" name="yourName" required></label>
+          <label class="field">How you knew the work <span class="req">*</span>
+            <select name="relationship" required>
+              <option value="">Choose…</option>
+              <option>Someone they served / helped</option>
+              <option>Their student or trainee</option>
+              <option>Their teacher or mentor</option>
+              <option>A colleague</option>
+              <option>A supervisor or employer</option>
+              <option>A neighbour / community member</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid-2">
+          <label class="field">Years you knew the work <span class="req">*</span><input type="number" name="relYears" min="2" placeholder="min. 2" required></label>
+          <label class="field">Hours beside the work (est.) <span class="req">*</span><input type="number" name="relHours" min="100" placeholder="min. 100" required></label>
+        </div>
+        <label class="field">Your account, in your own words <span class="req">*</span>
+          <textarea name="statement" placeholder="Write what you saw. Do not copy anyone else's words — identical statements are rejected." required></textarea>
+        </label>
+      </div>
+
+      <div class="form-step">
+        <span class="step-num">4</span>
+        <h3>The claims and their evidence</h3>
+        <p class="hint">Break the work into specific claims. For each one, name the evidence that would let a verifier confirm it. This is the heart of the nomination — a story is not enough; a claim that can be checked is.</p>
+        <div id="claims"></div>
+        <button type="button" class="add-btn" id="addClaim">+ Add another claim</button>
+      </div>
+
+      <div class="form-step">
+        <span class="step-num">5</span>
+        <h3>The other witnesses</h3>
+        <p class="hint">Name at least two more people who knew the work independently of you (three witnesses in total). The Village will contact them separately.</p>
+        <div id="witnesses"></div>
+        <button type="button" class="add-btn" id="addWitness">+ Add another witness</button>
+      </div>
+
+      <div class="form-step">
+        <span class="step-num">6</span>
+        <h3>Consent and honesty</h3>
+        <label class="check"><input type="checkbox" required> Everything I have written is true to the best of my knowledge, and I understand a false statement disqualifies the nomination.</label>
+        <label class="check"><input type="checkbox" required> I understand the person will be asked for their consent before any investigation begins, and may decline.</label>
+        <label class="check"><input type="checkbox" required> I understand nothing unverified will ever be published, and the decision rests with an independent human council.</label>
+      </div>
+
+      <div class="box" style="text-align:center;">
+        <button type="submit" class="cta">Review this nomination</button>
+        <p class="err" id="err" style="display:none;">Please complete every required field and tick every box above.</p>
+      </div>
+    </form>
+
+    <div class="form-wrap" id="reviewOut" style="display:none;">
+      <div class="notice green"><b>This is what a nomination looks like.</b> In 2028 this would enter the seven-stage pipeline: screening, consent, cross-verification, field verification, and adjudication. For now, nothing has been sent or stored — this preview is yours to read.</div>
+      <div class="summary-out" id="summary"></div>
+      <div style="text-align:center;margin-top:18px;"><button type="button" class="cta ghost small" id="editAgain">Edit the nomination</button></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="tricolor" aria-hidden="true" style="max-width:120px;margin:0 auto 20px;"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+  <p><b>Utubaa Village</b> · Registration &amp; Nomination</p>
+  <p>No payment is ever taken or accepted for a nomination.</p>
+  <p><a href="index.html">Home</a> · <a href="directory.html">The Directory</a> · <a href="about.html">The Criteria</a></p>
+</footer>
+
+<script src="laureates.js"></script>
+<script>
+  // fields dropdown
+  var fs = document.getElementById('fieldSelect');
+  Object.keys(FIELDS).forEach(function(code){
+    var o = document.createElement('option'); o.value = code; o.textContent = code + ' — ' + FIELDS[code]; fs.appendChild(o);
+  });
+
+  var claimsEl = document.getElementById('claims');
+  var witsEl = document.getElementById('witnesses');
+  var claimN = 0, witN = 0;
+
+  function addClaim(){
+    claimN++;
+    var d = document.createElement('div');
+    d.className = 'claim-row';
+    d.innerHTML = '<div class="row-head"><b>Claim ' + claimN + '</b>' + (claimN>1 ? '<button type="button" class="remove-btn">Remove</button>' : '') + '</div>'
+      + '<label class="field">What did they do? Be specific.<textarea name="claim" placeholder="Trained 60 midwives between 2004 and 2016."></textarea></label>'
+      + '<label class="field">What evidence supports it?<textarea name="claimEvidence" placeholder="Health-post training register; three trainees who can testify; the clinic that employs them."></textarea></label>'
+      + '<label class="field">Kind(s) of evidence'
+      + '<select name="claimClass"><option value="">Choose…</option>'
+      + '<option>Documentary record (register, payroll, dated media)</option>'
+      + '<option>Independent testimony (someone unconnected to us)</option>'
+      + '<option>Close testimony (a witness who knew the work)</option>'
+      + '<option>Something a verifier can see or count on the ground</option>'
+      + '<option>Oral testimony (recorded, for those who do not write)</option>'
+      + '</select></label>';
+    claimsEl.appendChild(d);
+    var rm = d.querySelector('.remove-btn'); if (rm) rm.addEventListener('click', function(){ d.remove(); });
+  }
+  function addWitness(){
+    witN++;
+    var d = document.createElement('div');
+    d.className = 'witness-row';
+    d.innerHTML = '<div class="row-head"><b>Witness ' + witN + '</b>' + (witN>1 ? '<button type="button" class="remove-btn">Remove</button>' : '') + '</div>'
+      + '<div class="grid-2"><label class="field">Name<input type="text" name="witName"></label>'
+      + '<label class="field">How they knew the work<input type="text" name="witRel" placeholder="e.g. former patient"></label></div>';
+    witsEl.appendChild(d);
+    var rm = d.querySelector('.remove-btn'); if (rm) rm.addEventListener('click', function(){ d.remove(); });
+  }
+  addClaim(); addClaim(); addWitness(); addWitness();
+  document.getElementById('addClaim').addEventListener('click', addClaim);
+  document.getElementById('addWitness').addEventListener('click', addWitness);
+
+  var form = document.getElementById('nomForm');
+  var err = document.getElementById('err');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()){
+      err.style.display = 'block';
+      var bad = form.querySelector(':invalid'); if (bad) bad.focus();
+      return;
+    }
+    err.style.display = 'none';
+    var g = function(n){ var el = form.querySelector('[name="'+n+'"]'); return el ? el.value : ''; };
+    var claims = Array.prototype.map.call(document.querySelectorAll('.claim-row'), function(r, i){
+      var t = r.querySelectorAll('textarea'); var s = r.querySelector('select');
+      return '  Claim '+(i+1)+': '+(t[0].value||'(blank)')+'\n     Evidence: '+(t[1].value||'(blank)')+'\n     Kind: '+(s.value||'(not chosen)');
+    }).join('\n');
+    var wits = Array.prototype.map.call(document.querySelectorAll('.witness-row'), function(r, i){
+      var inp = r.querySelectorAll('input');
+      return '  Witness '+(i+1)+': '+(inp[0].value||'(blank)')+' — '+(inp[1].value||'(blank)');
+    }).join('\n');
+
+    var out =
+      'NOMINATION (preview — not submitted)\n'+
+      '====================================\n\n'+
+      'THE PERSON HONOURED\n'+
+      '  Name:     '+g('nomineeName')+'\n'+
+      '  Field:    '+g('field')+' — '+(FIELDS[g('field')]||'')+'\n'+
+      '  Region:   '+g('region')+'\n'+
+      '  Years:    '+g('years')+'\n'+
+      '  Why:      '+g('citation')+'\n\n'+
+      'THE NOMINATING WITNESS\n'+
+      '  Name:         '+g('yourName')+'\n'+
+      '  Relationship: '+g('relationship')+'\n'+
+      '  Knew work:    '+g('relYears')+' years, ~'+g('relHours')+' hours\n'+
+      '  Statement:    '+g('statement')+'\n\n'+
+      'CLAIMS & EVIDENCE\n'+claims+'\n\n'+
+      'OTHER WITNESSES\n'+wits+'\n\n'+
+      '------------------------------------\n'+
+      'Next, in the real process: screening (a named officer signs) -> the person is\n'+
+      'asked to consent -> each claim is cross-checked -> a verifier visits the work\n'+
+      'in person -> an independent council decides, and may decide no one this year.';
+
+    document.getElementById('summary').textContent = out;
+    form.style.display = 'none';
+    var r = document.getElementById('reviewOut'); r.style.display = 'block';
+    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  document.getElementById('editAgain').addEventListener('click', function(){
+    document.getElementById('reviewOut').style.display = 'none';
+    form.style.display = 'block';
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Pillar — Utubaa Village</title>
+<meta name="description" content="A pillar in Utubaa Village: the verified life-stage ledger — contribution, the failures declared, the lessons for humanity, and the belief held at each stage's end.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="tricolor" aria-hidden="true"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="2" y="12" width="5" height="12" rx="1" fill="#078930"/><rect x="10.5" y="4" width="5" height="20" rx="1" fill="#FCDD09"/><rect x="19" y="12" width="5" height="12" rx="1" fill="#DA121A"/>
+    </svg>
+    UTUBAA VILLAGE
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="directory.html">The Directory</a>
+    <a href="nominate.html">Nominate</a>
+    <a href="about.html">The Criteria</a>
+  </div>
+</nav>
+
+<main id="main">
+  <!-- rendered by JS -->
+</main>
+
+<footer class="site">
+  <div class="tricolor" aria-hidden="true" style="max-width:120px;margin:0 auto 20px;"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+  <p><b>Utubaa Village</b> · A pillar's record</p>
+  <p><a href="directory.html">Back to the Directory</a> · <a href="about.html">How the record is built</a></p>
+</footer>
+
+<script src="laureates.js"></script>
+<script>
+  function q(name){ var m = new RegExp('[?&]'+name+'=([^&]+)').exec(location.search); return m ? decodeURIComponent(m[1]) : null; }
+  function initials(name){ return name.replace(/\(illustrative\)/i,'').trim().split(/\s+/).slice(0,2).map(function(w){return w[0];}).join('').toUpperCase(); }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function list(items){ return '<ul>'+items.map(function(i){return '<li>'+esc(i)+'</li>';}).join('')+'</ul>'; }
+
+  var id = q('id');
+  var l = (window.LAUREATES||[]).filter(function(x){return x.id===id;})[0] || window.LAUREATES[0];
+  var main = document.getElementById('main');
+
+  var stagesHtml = l.stages.map(function(s){
+    return '<div class="stage">'
+      + '<div class="stage-head"><div class="period">'+esc(s.period)+'</div><h3>'+esc(s.stage)+'</h3><div class="sub" style="font-size:.88rem;">'+esc(s.role)+'</div></div>'
+      + '<div class="stage-body">'
+      + '<div class="ledger-row"><div class="ledger-label"><span class="dot g"></span>Contribution &nbsp;<span class="chip verified">Verified</span></div>'+list(s.contribution)+'</div>'
+      + '<div class="ledger-row"><div class="ledger-label"><span class="dot r"></span>Why it went unseen &nbsp;<span class="chip absence">The unsung record</span></div><p>'+esc(s.recognitionAbsence)+'</p></div>'
+      + '<div class="ledger-row"><div class="ledger-label"><span class="dot r"></span>What failed, and what it cost &nbsp;<span class="chip ownwords">In their own words</span></div>'+list(s.failures)+'</div>'
+      + '<div class="ledger-row"><div class="ledger-label"><span class="dot y"></span>The lesson for humanity &nbsp;<span class="chip ownwords">In their own words</span></div>'+list(s.lessons)+'</div>'
+      + '<div class="ledger-row"><div class="ledger-label"><span class="dot y"></span>What they believed at the end of this stage &nbsp;<span class="chip ownwords">Verbatim · never edited</span></div>'
+      + '<p class="belief">&ldquo;'+esc(s.belief.text)+'&rdquo;</p><div class="belief-date">— recorded '+esc(s.belief.date)+'</div></div>'
+      + '</div></div>';
+  }).join('');
+
+  var v = l.verification;
+  main.innerHTML =
+    '<section class="profile-head"><div class="box">'
+    + '<div class="monogram" style="background:'+l.color+';">'+initials(l.name)+'</div>'
+    + '<span class="eyebrow">'+esc(FIELDS[l.field])+' · '+esc(MODES[l.mode])+'</span>'
+    + '<h1>'+esc(l.name)+'</h1>'
+    + '<p class="sub" style="font-size:1.05rem;">'+esc(l.role)+' &middot; '+esc(l.region)+' Region &middot; '+esc(l.languages)+'</p>'
+    + '<p class="serif" style="font-style:italic;font-size:1.15rem;max-width:56ch;margin:18px auto 0;">'+esc(l.cite)+'</p>'
+    + '</div></section>'
+
+    + '<section class="band tight" style="padding-top:0;"><div class="box">'
+    + '<div class="notice" style="margin-bottom:26px;"><b>Illustrative pillar.</b> A composite created to show how a verified record will read. No real person is depicted.</div>'
+    + '<div class="verif-box"><h3>How this record was verified</h3><div class="verif-grid">'
+    + '<div class="v"><div class="n">'+v.years+'</div><div class="l">years of verified contribution</div></div>'
+    + '<div class="v"><div class="n">'+v.witnesses+'</div><div class="l">close witnesses who knew the work</div></div>'
+    + '<div class="v"><div class="n">'+v.corroborators+'</div><div class="l">independent corroborators</div></div>'
+    + '</div><p style="font-size:.9rem;color:var(--muted);margin:16px auto 0;max-width:60ch;"><b>Evidence:</b> '+esc(v.evidenceTypes)+'. Screened with AI assistance; every judgment made and signed by a named human adjudicator.</p></div>'
+    + '</div></section>'
+
+    + '<section class="band tight"><div class="box"><h2>The life, told in stages</h2>'
+    + '<p class="sub">A pillar is not a photograph. It is an honest ledger — what was built, what it cost, and what the life came to teach. Read the whole of it.</p></div>'
+    + stagesHtml
+    + '</section>'
+
+    + '<section class="band tight" style="padding-top:0;"><div class="box">'
+    + '<div class="testimony"><h3>The virtual obelisk</h3><p>Instead of stone, each pillar becomes a place you can enter — the work, the ground it stood on, and the person&rsquo;s own recorded voice.</p>'
+    + '<div class="obelisk">'+esc(l.obelisk)+'</div></div>'
+    + '<p class="sub" style="font-size:.85rem;margin-top:24px;">Recorded testimony is never edited or synthetically altered. Knowledge capture proceeds only under the laureate&rsquo;s separate, revocable consent.</p>'
+    + '<div style="margin-top:24px;"><a class="cta ghost small" href="directory.html">&larr; Back to the Directory</a></div>'
+    + '</div></section>';
+
+  document.title = l.name + ' — Utubaa Village';
+</script>
+</body>
+</html>

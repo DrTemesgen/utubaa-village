@@ -33,7 +33,7 @@ window.LAUREATES = [
     region: "Amhara",
     languages: "Amharic",
     cite: "For forty-one years teaching the children of one highland village to read — and refusing three transfers to the town so that the girls would not lose their teacher.",
-    verification: { witnesses: 3, corroborators: 4, evidenceTypes: "School registers, church records, 12 former-pupil testimonies, on-site inspection", years: 41 },
+    verification: { witnesses: 7, evidenceItems: 7, evidenceTypes: "School registers, church records, 12 former-pupil testimonies, on-site inspection", years: 41 },
     stages: [
       {
         stage: "The one-room years", period: "1984–2003", role: "Sole teacher, informal village school",
@@ -79,7 +79,7 @@ window.LAUREATES = [
     region: "Oromia",
     languages: "Afaan Oromo",
     cite: "For a drought-resistant way of intercropping that spread by word of mouth to more than four thousand pastoralist households — carried farmer to farmer, never sold.",
-    verification: { witnesses: 3, corroborators: 5, evidenceTypes: "Agronomist site survey, yield sampling across 14 farms, 4,000+ household adoption trace, cooperative records", years: 22 },
+    verification: { witnesses: 7, evidenceItems: 7, evidenceTypes: "Agronomist site survey, yield sampling across 14 farms, 4,000+ household adoption trace, cooperative records", years: 22 },
     stages: [
       {
         stage: "The dry years", period: "2003–2014", role: "Herder turned cultivator",
@@ -109,7 +109,7 @@ window.LAUREATES = [
     region: "South Ethiopia",
     languages: "Gamo, Amharic",
     cite: "For thirty years walking mountain footpaths to reach mothers in labour, and for the maternal deaths that fell to near zero in the kebeles she served.",
-    verification: { witnesses: 4, corroborators: 6, evidenceTypes: "Health-post records, district mortality data, 20 mother interviews, midwife-register", years: 30 },
+    verification: { witnesses: 7, evidenceItems: 7, evidenceTypes: "Health-post records, district mortality data, 20 mother interviews, midwife-register", years: 30 },
     stages: [
       {
         stage: "The footpaths", period: "1995–2012", role: "Traditional then trained birth attendant",
@@ -138,7 +138,7 @@ window.LAUREATES = [
     region: "Somali",
     languages: "Somali, Amharic",
     cite: "For keeping a shared well open to every clan through years of dispute, and for turning a source of conflict into a place of agreement.",
-    verification: { witnesses: 3, corroborators: 5, evidenceTypes: "Elders' council testimony, water-committee records, 3 clan attestations, site inspection", years: 18 },
+    verification: { witnesses: 7, evidenceItems: 7, evidenceTypes: "Elders' council testimony, water-committee records, 3 clan attestations, site inspection", years: 18 },
     stages: [
       {
         stage: "The shared well", period: "2007–2025", role: "Water-committee custodian",
@@ -167,7 +167,7 @@ window.LAUREATES = [
     region: "Tigray",
     languages: "Tigrinya, Amharic",
     cite: "For sitting between grieving families year after year until they could share a table — and for burying no grudge he was asked to carry.",
-    verification: { witnesses: 3, corroborators: 6, evidenceTypes: "Community-court records, 15 reconciled-family testimonies, church attestation, site interviews", years: 27 },
+    verification: { witnesses: 7, evidenceItems: 7, evidenceTypes: "Community-court records, 15 reconciled-family testimonies, church attestation, site interviews", years: 27 },
     stages: [
       {
         stage: "The long mediations", period: "1998–2025", role: "Customary reconciler (shimagle)",
@@ -196,7 +196,7 @@ window.LAUREATES = [
     region: "Sidama",
     languages: "Ethiopian Sign Language, Amharic, Sidaamu Afoo",
     cite: "For opening the first classroom in her town where deaf children were taught in their own language — and for the sign vocabulary she built so their world could be named.",
-    verification: { witnesses: 4, corroborators: 5, evidenceTypes: "School records, 10 deaf-alumni testimonies (signed, video), sign-lexicon archive, site inspection", years: 24 },
+    verification: { witnesses: 7, evidenceItems: 7, evidenceTypes: "School records, 10 deaf-alumni testimonies (signed, video), sign-lexicon archive, site inspection", years: 24 },
     stages: [
       {
         stage: "Naming the world", period: "2001–2025", role: "Founder-teacher, deaf classroom",

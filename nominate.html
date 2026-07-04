@@ -42,8 +42,8 @@
       <div class="crit"><h3>An individual, living</h3><p>One person, never an organization. Living, so their story and consent can be recorded.</p></div>
       <div class="crit"><h3>Ten years of work</h3><p>A sustained, verifiable contribution already made — not a promise, not potential.</p></div>
       <div class="crit"><h3>You knew the work</h3><p>You are a student, patient, colleague, neighbour, teacher, or the one they served — with at least two years and a hundred hours beside the work.</p></div>
-      <div class="crit"><h3>Three witnesses</h3><p>At least three people who knew the work, from two kinds of relationship, at least one who was directly helped.</p></div>
-      <div class="crit"><h3>Evidence, per claim</h3><p>Each claim needs two independent sources from two classes: records, independent testimony, or what a verifier can see on the ground.</p></div>
+      <div class="crit"><h3>Seven witnesses</h3><p>At least seven people who knew the work, from two kinds of relationship, at least one who was directly helped. Recorded oral testimony counts fully.</p></div>
+      <div class="crit"><h3>Seven evidences</h3><p>At least seven independent evidence items, from two or more classes: records, independent testimony, or what a verifier can see on the ground.</p></div>
       <div class="crit"><h3>No payment, no campaign</h3><p>No one is ever paid to nominate, and public campaigning for a nominee disqualifies them. This is not a popularity contest.</p></div>
     </div>
   </section>
@@ -127,7 +127,7 @@
       <div class="form-step">
         <span class="step-num">5</span>
         <h3>The other witnesses</h3>
-        <p class="hint">Name at least two more people who knew the work independently of you (three witnesses in total). The Village will contact them separately.</p>
+        <p class="hint">Name at least six more people who knew the work independently of you (seven witnesses in total). Recorded oral testimony counts fully; the Village will contact them separately.</p>
         <div id="witnesses"></div>
         <button type="button" class="add-btn" id="addWitness">+ Add another witness</button>
       </div>
@@ -201,7 +201,7 @@
     witsEl.appendChild(d);
     var rm = d.querySelector('.remove-btn'); if (rm) rm.addEventListener('click', function(){ d.remove(); });
   }
-  addClaim(); addClaim(); addWitness(); addWitness();
+  addClaim(); addClaim(); addClaim(); addWitness(); addWitness(); addWitness();
   document.getElementById('addClaim').addEventListener('click', addClaim);
   document.getElementById('addWitness').addEventListener('click', addWitness);
 
